@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;700&display=swap');
 
+a, a:active, a:link, a:visited {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+
+    color: black;
+    font-size: 25px;
+    text-decoration: none;
+}
+
 h1 {
     position: absolute;
     left: 50%;
