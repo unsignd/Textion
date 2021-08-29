@@ -23,7 +23,7 @@ h1 {
     font-size: 75px;
     color: #303847;
 
-    text-align: center;
+    /* text-align: center; */
 }
 
 @media screen and (max-width: 768px) {
@@ -50,5 +50,5 @@ p {
     font-size: 30px;
     color: #303847;
 
-    text-align: center;
+    /* text-align: center; */
 }
