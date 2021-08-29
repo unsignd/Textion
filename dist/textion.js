@@ -70,7 +70,6 @@ function Anim(obj, loopTimeout, repeatCount, loopDelay, animType) {
                 }, loopTimeout);
                 break;
             case 1:
-                
                 break;
         }
     }, loopDelay);
