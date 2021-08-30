@@ -6,8 +6,7 @@ It adds text animation without any affecting your code.
 
 <img src="./examples/data/textionGIF.gif">
 
-## Npm
-You can install the module using npm.
+## Install
 ```
 npm i textion
 ```
