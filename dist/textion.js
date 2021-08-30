@@ -48,41 +48,47 @@ function Anim(obj, loopTimeout, repeatCount, loopDelay, animType) {
         switch (animType) {
             case 0:
                 changeText = setInterval(() => {
-                    if (numList.includes(text[index - 1])) {
-                        spanText.innerText = numList[Math.round(Math.random() * (numList.length - 1))];
-                    } else if (capitalList.includes(text[index - 1])) {
-                        spanText.innerText = capitalList[Math.round(Math.random() * (capitalList.length - 1))];
+                    if (count === repeatCount) {
+                        spanText.innerText = text[index - 1];
                     } else {
-                        spanText.innerText = lowerList[Math.round(Math.random() * (lowerList.length - 1))];
+                        if (numList.includes(text[index - 1])) {
+                            spanText.innerText = numList[Math.round(Math.random() * (numList.length - 1))];
+                        } else if (capitalList.includes(text[index - 1])) {
+                            spanText.innerText = capitalList[Math.round(Math.random() * (capitalList.length - 1))];
+                        } else {
+                            spanText.innerText = lowerList[Math.round(Math.random() * (lowerList.length - 1))];
+                        }
                     }
                     count++;
                     obj.appendChild(spanText);
                     if (index === text.length + 1) {
                         obj.innerHTML = text;
                         clearInterval(changeText);
-                    } else if (count >= repeatCount && count % repeatCount === 0) {
+                    } else if (count + 1 === repeatCount) {
+                        count = 0;
                         index++;
                         obj.innerHTML = text.substring(0, index - 1);
     
                         spanText.style.setProperty('opacity', '0');
-                        opacityLerp(spanText);
+                        opacityLerp(spanText, loopTimeout);
                     }
                 }, loopTimeout);
                 break;
             case 1:
+                //split as space
                 break;
         }
     }, loopDelay);
 }
 
-function opacityLerp(obj) {
+function opacityLerp(obj, timeout) {
     setTimeout(() => {
         let changeOpacity = setInterval(() => {
             if (parseFloat(obj.style.opacity) >= 0.95) {
                 obj.style.setProperty('opacity', '1');
                 clearInterval(changeOpacity);
             }
-            obj.style.setProperty('opacity', parseFloat(obj.style.opacity) + (1 - parseFloat(obj.style.opacity)) / 100);
+            obj.style.setProperty('opacity', parseFloat(obj.style.opacity) + (1 - parseFloat(obj.style.opacity)) * 5 / timeout);
         }, 10);
     }, 10);
 }
