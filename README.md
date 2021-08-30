@@ -1,5 +1,6 @@
 # Textion
-A javascript module for text animation
+Textion is a javascript module for text animation.<br>
+It adds text animation without any affecting your code.
 
 <img src="./data/textionGIF.gif">
 
