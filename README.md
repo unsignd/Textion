@@ -1,3 +1,5 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/unsignd/textion/badge)](https://www.codefactor.io/repository/github/unsignd/textion)
+
 # Textion
 Textion is a javascript module for text animation.<br>
 It adds text animation without any affecting your code.
