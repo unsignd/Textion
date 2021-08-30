@@ -30,4 +30,4 @@ Then add the options you want to use in the text elements' class list.
 |`timeout-{number}`|0|The latency before animation starts. (ms)|
 |`interval-{number}`|65|The interval of animation loop. (ms)|
 |`repeat-{number}`|2|The number of character changes.|
-|`lerpSpeed-{number}`|4 / `{timeout.number}`|The speed of opacity lerp function|
+|`lerpSpeed-{number}`|4 / `{timeout.number}`|The speed of opacity changing in lerp function|
