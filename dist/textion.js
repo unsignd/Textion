@@ -20,9 +20,6 @@ window.onload = () => {
                 delay = i;
         }
 
-        if (item.classList.contains('type-1'))
-            type = 1;
-
         Anim(item, timeout, repeat, delay, type);
             
         item.classList.remove('textion');
@@ -73,9 +70,6 @@ function Anim(obj, loopTimeout, repeatCount, loopDelay, animType) {
                         opacityLerp(spanText, loopTimeout);
                     }
                 }, loopTimeout);
-                break;
-            case 1:
-                //split as space
                 break;
         }
     }, loopDelay);
