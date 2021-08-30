@@ -1,2 +1,4 @@
 # Textion
-Textion is a javascript module for text animation
+A javascript module for text animation
+
+<img src="./data/textionGIF.gif">
