@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
 
+body {
+    overflow: hidden;
+}
+
 a, a:active, a:link, a:visited {
     position: absolute;
     top: 15px;
@@ -23,16 +27,11 @@ h1 {
     font-size: 75px;
     color: #303847;
 
-    /* text-align: center; */
+    text-align: center;
 }
 
 @media screen and (max-width: 768px) {
-    h1 {
-        top: 50vmin;
-        transform: translate(-50%, -50%);
-    }
-
-    p {
+    body {
         display: none;
     }
 }
@@ -50,5 +49,31 @@ p {
     font-size: 30px;
     color: #303847;
 
-    /* text-align: center; */
+    text-align: center;
+}
+
+#t1 {
+    position: absolute;
+    top: -50px;
+    left:100px;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 200px;
+    color: #e0e4eb;
+
+    text-align: left;
+}
+
+#t2 {
+    position: absolute;
+    bottom: -300px;
+    right: 10px;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 300px;
+    color: #e7ebf3;
+
+    text-align: right;
 }

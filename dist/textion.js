@@ -3,7 +3,6 @@ window.onload = () => {
     let timeout = 65;
     let repeat = 2;
     let delay = 0;
-    let type = 0;
     let item;
 
     while (fadeList.length > 0) {
@@ -20,13 +19,12 @@ window.onload = () => {
                 delay = i;
         }
 
-        Anim(item, timeout, repeat, delay, type);
-            
+        Anim(item, timeout, repeat, delay); 
         item.classList.remove('textion');
     }
 }
 
-function Anim(obj, loopTimeout, repeatCount, loopDelay, animType) {
+function Anim(obj, loopTimeout, repeatCount, loopDelay) {
     const text = obj.innerHTML;
     const textArr = obj.innerHTML.split(' ');
     const lowerList = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
@@ -42,36 +40,33 @@ function Anim(obj, loopTimeout, repeatCount, loopDelay, animType) {
 
     setTimeout(() => {
         spanText.style.setProperty('color', obj.style.color);
-        switch (animType) {
-            case 0:
-                changeText = setInterval(() => {
-                    if (count === repeatCount) {
-                        spanText.innerText = text[index - 1];
-                    } else {
-                        if (numList.includes(text[index - 1])) {
-                            spanText.innerText = numList[Math.round(Math.random() * (numList.length - 1))];
-                        } else if (capitalList.includes(text[index - 1])) {
-                            spanText.innerText = capitalList[Math.round(Math.random() * (capitalList.length - 1))];
-                        } else {
-                            spanText.innerText = lowerList[Math.round(Math.random() * (lowerList.length - 1))];
-                        }
-                    }
-                    count++;
-                    obj.appendChild(spanText);
-                    if (index === text.length + 1) {
-                        obj.innerHTML = text;
-                        clearInterval(changeText);
-                    } else if (count + 1 === repeatCount) {
-                        count = 0;
-                        index++;
-                        obj.innerHTML = text.substring(0, index - 1);
-    
-                        spanText.style.setProperty('opacity', '0');
-                        opacityLerp(spanText, loopTimeout);
-                    }
-                }, loopTimeout);
-                break;
-        }
+        changeText = setInterval(() => {
+            if (count === repeatCount || index === text.length) {
+                spanText.innerText = text[index - 1];
+            } else {
+                if (numList.includes(text[index - 1])) {
+                    spanText.innerText = numList[Math.round(Math.random() * (numList.length - 1))];
+                } else if (capitalList.includes(text[index - 1])) {
+                    spanText.innerText = capitalList[Math.round(Math.random() * (capitalList.length - 1))];
+                } else {
+                    spanText.innerText = lowerList[Math.round(Math.random() * (lowerList.length - 1))];
+                }
+            }
+            count++;
+            obj.appendChild(spanText);
+            if (index === text.length + 1) {
+                obj.innerHTML = text;
+                clearInterval(changeText);
+            } else if (count + 1 === repeatCount) {
+                count = 0;
+                index++;
+                obj.innerHTML = text.substring(0, index - 1);
+
+                spanText.style.setProperty('opacity', '0');
+                opacityLerp(spanText, loopTimeout);
+            }
+        }, loopTimeout);
+        break;
     }, loopDelay);
 }
 
@@ -82,7 +77,7 @@ function opacityLerp(obj, timeout) {
                 obj.style.setProperty('opacity', '1');
                 clearInterval(changeOpacity);
             }
-            obj.style.setProperty('opacity', parseFloat(obj.style.opacity) + (1 - parseFloat(obj.style.opacity)) * 5 / timeout);
+            obj.style.setProperty('opacity', parseFloat(obj.style.opacity) + (1 - parseFloat(obj.style.opacity)) * 4 / timeout);
         }, 10);
     }, 10);
 }
