@@ -4,8 +4,16 @@ It adds text animation without any affecting your code.
 
 <img src="./examples/data/textionGIF.gif">
 
+## Npm
+You can install the module using npm.
+```
+npm i textion
+```
+
 ## Usage
-Download js file in dist folder and include it.
+Download js file in dist folder or using npm.<br>
+And include it.
+
 ```html
 <script src="path/textion.js"></script>
 ```
