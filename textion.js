@@ -12,13 +12,13 @@ window.onload = () => {
         item.innerHTML = '';
         
         for (let i = 0; i <= 5000; i++) {
-            if (item.classList.contains('timeout-' + i))
+            if (item.classList.contains('interval-' + i))
                 timeout = i;
 
             if (item.classList.contains('repeat-' + i))
                 repeat = i;
 
-            if (item.classList.contains('delay-' + i))
+            if (item.classList.contains('timeout-' + i))
                 delay = i;
         }
 
