@@ -1,6 +1,6 @@
 {
   "name": "textion",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Textion is a javascript module for text animation.",
   "main": "dist/textion.js",
   "scripts": {
