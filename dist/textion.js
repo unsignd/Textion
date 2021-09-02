@@ -1,5 +1,5 @@
 /*! 
- * VERSION: 1.2.0
+ * VERSION: 1.2.3
  *
  * @license Copyright (c) 2021, Yejun Kim. All rights reserved.
 **/
