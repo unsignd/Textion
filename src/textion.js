@@ -29,9 +29,6 @@ window.onload = () => {
         if (speed === undefined)
             speed = 4 / timeout;
 
-        if (item.classList.contains('type-1'))
-            type = 1;
-
         Anim(item, timeout, repeat, delay, inner, speed);
             
         item.classList.remove('textion');
