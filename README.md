@@ -10,6 +10,9 @@ It adds text animation without any affecting your code.
 ```
 npm install textion
 ```
+```
+yarn add textion
+```
 
 ## Usage
 Download js file in dist folder or using npm.<br>
