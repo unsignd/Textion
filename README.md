@@ -8,7 +8,10 @@ It adds text animation without any affecting your code.
 
 ## Install
 ```
-npm i textion
+npm install textion
+```
+```
+yarn add textion
 ```
 
 ## Usage
